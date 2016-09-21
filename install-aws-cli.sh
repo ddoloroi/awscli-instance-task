@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x
+set -x
 
 #Update packages list
 sudo apt-get update > /dev/null
@@ -58,7 +58,7 @@ ssh -i $KeyPairFile ubuntu@"$InstanceIP" 'docker run --name mySQLserver -d -p 33
 ssh -i $KeyPairFile ubuntu@"$InstanceIP" 'docker run java:latest' &> /dev/null
 #something else about docker
 
-#set +x
+set +x
 
 # Information and ending futuries
 echo -e " \nNow you have run your:\n   instance $InstanceID\n   public IP $InstanceIP\n   and key name $KeyPairFile\n" 
@@ -69,3 +69,4 @@ if [ "$?" -eq "0" ]; then
 else
     ssh -i $KeyPairFile ubuntu@"$InstanceIP"
 fi
+#set +x

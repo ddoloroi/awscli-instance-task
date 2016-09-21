@@ -1,2 +1,6 @@
 # awscli-instance-task
-my first creation of instance via aws command line
+This is my first creation of instance via aws command line
+
+This repo contains script file which create t2 instance and deploy Docker with two containers - mySQL and Java
+  
+
