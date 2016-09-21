@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 
 #Update packages list
 sudo apt-get update > /dev/null
@@ -57,8 +57,6 @@ ssh -i $KeyPairFile ubuntu@"$InstanceIP" 'logout' &> /dev/null
 ssh -i $KeyPairFile ubuntu@"$InstanceIP" 'docker run --name mySQLserver -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass@word01 mysql:latest'&> /dev/null
 ssh -i $KeyPairFile ubuntu@"$InstanceIP" 'docker run java:latest' &> /dev/null
 #something else about docker
-
-set +x
 
 # Information and ending futuries
 echo -e " \nNow you have run your:\n   instance $InstanceID\n   public IP $InstanceIP\n   and key name $KeyPairFile\n" 
